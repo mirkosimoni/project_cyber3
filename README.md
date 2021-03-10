@@ -1,2 +1,3 @@
 # project_cyber3
- 
+ INSTALLARE COMPONENTI
+ CREARE .env
