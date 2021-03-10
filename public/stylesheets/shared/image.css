@@ -1,0 +1,60 @@
+:root {
+    --image-cover-width: 700px;
+    --image-cover-width-large: 450px;
+    --image-cover-aspect-ratio:1.5;
+}
+
+.image-cover {
+    width: var(--image-cover-width);
+    height: calc(var(--image-cover-width) / var(--image-cover-aspect-ratio));
+}
+
+.image-cover-large {
+    --image-cover-width: var(--image-cover-width-large);
+}
+
+.image-grid {
+    display: grid;
+    justify-content: center;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, var(--image-cover-width));
+}
+
+.image-grid-large {
+    grid-template-columns: repeat(auto-fill, var(--image-cover-width-large));
+}
+
+.image-details {
+    display: flex;
+}
+
+.image-details-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.image-details-grid {
+    display: grid;
+    align-content: flex-start;
+    align-items: center;
+    grid-gap: 1rem;
+    grid-template-columns: auto auto;
+}
+
+.image-details-btn-grid {
+    display: grid;
+    justify-items: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    grid-template-areas:
+    "edit delete"
+    "user user";
+    grid-gap: .5rem;
+    margin-top: .5rem;
+}
+
+.image-details-user-button {
+    grid-area: user;
+    justify-self: stretch;
+}

@@ -1,0 +1,28 @@
+<div class="form-row">
+    <div class="form-item">
+        <label>Image Name</label>
+        <input type="text" name="imageName" value="<%= image.imageName %>">
+    </div>
+    <div class="form-item">
+        <label>Loading Date</label>
+        <input type="date" name="loadDate"
+               value="<%= image.loadDate == null ? '' :
+               image.loadDate.toISOString().split('T')[0] %>">
+    </div>
+    <div class="form-item">
+        <label>Creation Date</label>
+        <input type="date" name="createDate"
+               value="<%= image.createDate == null ? '' :
+               image.createDate.toISOString().split('T')[0] %>">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-item form-item-no-grow">
+        <label>Cover</label>
+        <input type="file" name="photo" class="image-cover filepond">
+    </div>
+    <div class="form-item">
+        <label>Description</label>
+        <textarea name="description"><%= image.description%></textarea>
+    </div>
+</div>

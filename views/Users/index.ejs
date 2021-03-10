@@ -1,0 +1,22 @@
+<h2 class="page-header">Search Users</h2>
+<form action="/users" method="GET">
+    <div class="form-row">
+        <div class="form-item">
+            <label>Name</label>
+            <input type="text" name="name" value="<%= searchOptions.name %>">
+        </div>
+    </div>
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<br>
+<br>
+<% users.forEach(user => { %>
+    <div class="user-row">
+        <div class="user-name"><%= user.name + " " + user.surname  %></div>
+        <div class="btn-row">
+            <%- include('../partials/deleteForm', {url: `/users/${user.id}`})%>
+        </div>
+    </div>
+<% }) %>

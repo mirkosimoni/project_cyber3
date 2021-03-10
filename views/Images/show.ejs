@@ -1,0 +1,19 @@
+<h2 class="page-header"><%= image.imageName%></h2>
+<div class="image-details">
+    <div>
+        <img class="image-cover" height="250" width="200" src="<%= image.loadedImagePath%>">
+        <div class="image-details-btn-grid form-row-end">
+            <a class="btn btn-primary" href="/images/<%=image.id%>/edit">Edit</a>
+            <%- include('../partials/deleteForm', { url: `/images/${image.id}`})%>
+        </div>
+    </div>
+    &emsp;
+        <div class="image-details-grid">
+            <div class="image-details-label">Description:</div>
+            <div><%= image.description%></div>
+            <div class="image-details-label">Publish Date:</div>
+            <div><%= image.loadDate.toDateString()%></div>
+            <div class="image-details-label">Creation Date:</div>
+            <div><%= image.createDate.toDateString()%></div>
+        </div>
+</div>

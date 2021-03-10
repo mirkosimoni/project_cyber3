@@ -1,0 +1,16 @@
+<% imageCoverClass = locals.large ? 'image-cover-large' : '' %>
+<% imageGridClass = locals.large ? 'image-grid-large' : '' %>
+<div class="image-grid <%= imageGridClass %>">
+    <% images.forEach(image => { %>
+    <div class="container">
+        <div class="inner-container">
+            <h3 style="text-align:center"><%= image.imageName %></h3>
+        </div>
+        <div class="inner-container">
+            <a href="/images/<%= image.id %>">
+                <img class="image-cover <%= imageCoverClass %>" src="<%= image.loadedImagePath %>">
+            </a>
+        </div>
+    </div>
+    <% }) %>
+</div>

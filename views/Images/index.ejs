@@ -1,0 +1,18 @@
+<h2 class="page-header">Search Images</h2>
+<form action="/images" method="GET">
+    <div class="form-row">
+        <div class="form-item">
+            <label>Image Name</label>
+            <input type="text" name="imageName" value="<%= searchOptions.imageName %>">
+        </div>
+        <div class="form-item">
+            <label>Loaded After</label>
+            <input type="date" name="loadDate" value="<%= searchOptions.loadDate %>">
+        </div>
+    </div>
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<br>
+<%- include('../partials/imageGrid', {images: images, large:true})%>
